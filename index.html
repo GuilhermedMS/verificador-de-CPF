@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de CPF</title>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #00ff00;
+            }
+            50% {
+                box-shadow: 0 0 20px #00ff00;
+            }
+            100% {
+                box-shadow: 0 0 5px #00ff00;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2c2c2c;
+            color: #ffffff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            background: #333;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin-bottom: 20px;
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 4px;
+            background: #444;
+            color: #fff;
+            font-size: 16px;
+            animation: fadeIn 2s ease-in-out;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input:focus {
+            background-color: #555;
+            color: #fff;
+            outline: none;
+        }
+
+        button {
+            padding: 15px;
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .dark-mode-button {
+            margin-top: 20px;
+            background-color: #555;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .glow {
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        .dark-mode {
+            background-color: #f0f0f0;
+            color: #2c2c2c;
+        }
+
+        .dark-mode .container {
+            background: #ccc;
+            color: #2c2c2c;
+        }
+
+        .dark-mode input {
+            background: #eee;
+            color: #2c2c2c;
+        }
+
+        .dark-mode input:focus {
+            background-color: #ddd;
+        }
+
+        .dark-mode button {
+            background-color: #007BFF;
+        }
+
+        .dark-mode button:hover {
+            background-color: #0056b3;
+        }
+
+        .toggle-dark-mode {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f5f5f5c4;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-dark-mode:hover {
+            background-color: #ffffff;
+        }
+
+        .dark-mode .toggle-dark-mode {
+            background-color: #2c2c2c;
+            color: #f0f0f0;
+        }
+
+        .dark-mode .toggle-dark-mode:hover {
+            background-color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Verificação de CPF</h2>
+        <input type="text" id="cpf" placeholder="Digite o CPF">
+        <button onclick="verificarCPF()">Verificar</button>
+        <p id="resultado"></p>
+    </div>
+    <button class="toggle-dark-mode" onclick="toggleDarkMode()">☀️</button>
+    <script src="script.js"></script>
+</body>
+</html>
